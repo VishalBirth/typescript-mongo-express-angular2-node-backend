@@ -17,7 +17,9 @@ database.connectToDatabase();
 const port = normalizePort(process.env.PORT || 3000);
 
 
-router.set('port', port);
+server.listen(port,function(){
+  console.log('Server listening at port %d,port);
+});
 
 const server = http.createServer(router);
 server.listen(port);
@@ -53,3 +55,4 @@ function onListening(): void {
   let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
+
